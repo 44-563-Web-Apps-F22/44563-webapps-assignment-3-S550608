@@ -39,38 +39,85 @@
         <li>Subramanya Swami Temple</li>
     </ul>
 
-    <a href="file:///C:/Users/s550608/OneDrive%20-%20nwmissouri.edu/Desktop/webapps_repos/44563-webapps-assignment-3-S550608/aboutme.html">Aboutme</a>
+    <a
+        href="file:///C:/Users/s550608/OneDrive%20-%20nwmissouri.edu/Desktop/webapps_repos/44563-webapps-assignment-3-S550608/aboutme.html">Aboutme</a>
     <hr>
     <p>
-        <h3>Best cities to visit in India</h3>
-        <p>The given below table shows that gives name of the cities and locations to visit in India</p>
-        <table border="1">
-            <tr>
-                <th> Name of the City </th>
-                <th> Location to visit </th>
-                <th> Time to spend </th>
-            </tr>
-            <tr>
-                <td>Hyderabad</td>
-                <td>Charminar</td>
-                <td>1 hour</td>
-            </tr>
-            <tr>
-                <td>Banglore</td>
-                <td>Bangalore Palace</td>
-                <td>2 hour</td>
-            </tr>
-            <tr>
-                <td>Agra</td>
-                <td>Taj Mahal</td>
-                <td>4 hour</td>
-            </tr>
-            <tr>
-                <td>Chennai</td>
-                <td>Palani</td>
-                <td>30 mintues</td>
-            </tr>
-        </table>
+    <h3>Best cities to visit in India</h3>
+    <p>The given below table shows that gives name of the cities and locations to visit in India</p>
+    <table border="1">
+        <tr>
+            <th> Name of the City </th>
+            <th> Location to visit </th>
+            <th> Time to spend </th>
+        </tr>
+        <tr>
+            <td>Hyderabad</td>
+            <td>Charminar</td>
+            <td>1 hour</td>
+        </tr>
+        <tr>
+            <td>Banglore</td>
+            <td>Bangalore Palace</td>
+            <td>2 hour</td>
+        </tr>
+        <tr>
+            <td>Agra</td>
+            <td>Taj Mahal</td>
+            <td>4 hour</td>
+        </tr>
+        <tr>
+            <td>Chennai</td>
+            <td>Palani</td>
+            <td>30 mintues</td>
+        </tr>
+    </table>
+    </p>
+    <hr>
+    <h3>Code snippet</h3>
+
+    <p><Blockquote>
+        <a href="https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link">How to
+            execute smooth scrolling in jQuery</a></Blockquote>
+        <pre>
+        $('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+    </pre>
+
+    <a href="https://css-tricks.com/snippets/jquery/smooth-scrolling/">Link to the Code snippet</a>
     </p>
 </body>
 
